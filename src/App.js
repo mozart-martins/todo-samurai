@@ -2,7 +2,7 @@ import './App.css';
 
 function App() {
   return (
-    <h1>TODO App</h1>
+    <h1 className='title'>TODO App</h1>
   );
 }
 
