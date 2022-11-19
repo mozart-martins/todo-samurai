@@ -1,19 +1,10 @@
 import React, { useState } from 'react'
-import { MdDelete } from 'react-icons/md'
-import './App.css'
 
 import NewTodo from './components/NewTodo'
+import TodoList from './components/TodoList'
 
 const App = () => {
   const [taskList, setTaskList] = useState([])
-
-  const checkTask = (task) => {
-    setTaskList(
-      taskList.map((obj) =>
-        task.id == obj.id ? (obj = { ...obj, checked: true }) : obj
-      )
-    )
-  }
 
   const newTask = (task) => {
     setTaskList([
@@ -26,8 +17,8 @@ const App = () => {
     ])
   }
 
-  const removeTask = (task) => {
-    setTaskList(taskList.filter((obj) => obj.id != task.id))
+  const updateTaskList = (taskList) => {
+    setTaskList(taskList)
   }
 
   return (
@@ -37,28 +28,7 @@ const App = () => {
       </header>
       <section className="main">
         <NewTodo newTask={newTask} />
-        <ul className="todo-list">
-          {taskList.map((task) => (
-            <li key={task.id}>
-              <span
-                className={['todo', task.checked ? 'checked' : ''].join(' ')}
-                onClick={() => {
-                  checkTask(task)
-                }}
-              >
-                {task.title}
-              </span>
-              <button
-                className="remove"
-                onClick={() => {
-                  removeTask(task)
-                }}
-              >
-                <MdDelete size={28} />
-              </button>
-            </li>
-          ))}
-        </ul>
+        <TodoList updateTaskList={updateTaskList} todoList={taskList} />
       </section>
     </section>
   )

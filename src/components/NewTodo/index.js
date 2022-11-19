@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import './style.css'
 
 const NewTodo = ({ newTask }) => {
   const [task, setTask] = useState('')
@@ -10,7 +11,7 @@ const NewTodo = ({ newTask }) => {
 
   const submit = (task) => {
     newTask(task)
-    ssetTask('')
+    setTask('')
   }
 
   const onTaskKeyDown = (e) => {
