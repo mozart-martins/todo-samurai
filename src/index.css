@@ -16,7 +16,7 @@ img {
   height: auto;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ol, ul, input, textarea {
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   background-color: #ffeaa7;
   margin: 0;
   padding: 0;
@@ -39,9 +39,21 @@ input, select, textarea {
 }
 
 ::placeholder {
-  color: rgb(0, 0, 0, 0.2);
+  color: rgba (0, 0, 0, 0.2);
 }
 
 .title {
   color: #fab1a0
+}
+
+.container {
+  display: block;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.main {
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
